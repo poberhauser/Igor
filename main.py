@@ -27,7 +27,7 @@ async def on_message(message: str):
         for mention in message.mentions:
             if mention.bot:
                 channel = message.channel
-                with open("logs.txt") as f:
+                with open("logs.txt", 'rb') as f:
                     text = f.read()
                 text_model = markovify.Text(text)
             await channel.send(text_model.make_sentence(tries=100000000))
