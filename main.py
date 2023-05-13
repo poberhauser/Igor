@@ -25,10 +25,15 @@ async def on_ready():
 async def on_message(message: str):
     print(message.content)
     if not message.author.bot:
+        print('where')
         for mention in message.mentions:
+            print('are')
             if mention.bot:
+                print('you')
                 channel = message.channel
+                print('breaking')
                 with open("logs.txt", 'rb') as f:
+                    print('stupid bot')
                     text = f.read()
                     print(message.content)
                 text_model = markovify.Text(text)
