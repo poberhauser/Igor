@@ -23,6 +23,7 @@ async def on_ready():
 
 @bot.event
 async def on_message(message: str):
+    print(message.content)
     if not message.author.bot:
         for mention in message.mentions:
             if mention.bot:
