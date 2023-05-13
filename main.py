@@ -28,6 +28,8 @@ async def on_message(message: str):
         print('where')
         for mention in message.mentions:
             print('are')
+            channel = message.channel
+            print(channel)
             if mention.bot:
                 print('you')
                 channel = message.channel
