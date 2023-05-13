@@ -37,7 +37,7 @@ async def on_message(message: str):
                     print('stupid bot')
                     text = f.read()
                     print(message.content)
-                text_model = markovify.Text(text)
+                text_model = markovify.Text(str(text))
             await channel.send(text_model.make_sentence(tries=100000000))
 
     with open("logs.txt", "a") as text_file:
