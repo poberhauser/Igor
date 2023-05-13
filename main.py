@@ -26,10 +26,10 @@ async def on_message(message: str):
     print(message.content)
     if not message.author.bot:
         print('where')
+        channel = message.channel
+        print("here's the channel!!!" + channel)
         for mention in message.mentions:
             print('are')
-            channel = message.channel
-            print(channel)
             if mention.bot:
                 print('you')
                 channel = message.channel
