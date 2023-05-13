@@ -26,17 +26,11 @@ async def on_message(message: str):
     channel = message.channel
     print(channel)
     if not message.author.bot:
-        print('where')
         for mention in message.mentions:
-            print('are')
             if mention.bot:
-                print('you')
                 channel = message.channel
-                print('breaking')
                 with open("logs.txt", 'rb') as f:
-                    print('stupid bot')
                     text = f.read()
-                    print(message.content)
                 text_model = markovify.Text(str(text))
             await channel.send(text_model.make_sentence(tries=100000000))
 
